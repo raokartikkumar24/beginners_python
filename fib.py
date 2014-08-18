@@ -1,7 +1,5 @@
 from math import log10
 
-fibs = {}
-
 
 def getdigits(i):
     if i > 0:
@@ -9,23 +7,33 @@ def getdigits(i):
     else:
         return 1
 
+fibs = {}
+def generate():
+	a = 0
+	b = 1
+	fibs[0]=1
+	for i in range(1, 5000):
+		c = a + b
+		dig = getdigits(c)
+		if dig not in fibs:
+			fibs[dig] = i+1
+		a = b
+		b = c
+		
+		
 
-fibarray = [50000]
 
-fibarray[0] = 0
-fibarray.append(1)
-a = 0
-b = 1
-fibs[0]=1
-for i in range(0, 100):
-    c = a + b
-    fibarray.append(c)
-    dig = getdigits(c)
-    fibs[c] = dig
-    a = b
-    b = c
-#print(fibarray)
-# print(fibs[3])
-#print(fibs[4])
-print(fibs)
+
+if __name__ == "__main__":
+	t = (int)(input())
+	generate()
+	while t != 0:
+		N = (int)(input())
+		print( fibs[N] )
+		t -= 1
+
+
+
+
+#print(fibs)
 
