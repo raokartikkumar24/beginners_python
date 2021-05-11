@@ -1,6 +1,6 @@
 __author__ = 'KRao4'
 menu = {} #an empty dictionary
-houses = { "lannister":111, "start":234} #init with some key pair value
+houses = { "lannister":111, "stark":234} #init with some key pair value
 
 
 menu['lannister'] = 123 #key valye pair
